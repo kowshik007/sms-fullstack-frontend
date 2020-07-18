@@ -1,0 +1,69 @@
+<div *ngIf="displaySearch">
+<form #searchForm="ngForm" (ngSubmit) = "onClickSubmit(searchForm.value)">
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="columns">
+            <div class="column auto">
+                <input class="input" type="date" placeholder="Enter start date" name="startDate" ngModel>
+            </div>
+            <div class="column auto">
+                <input class="input" type="date" placeholder="Enter end date" name="endDate" ngModel>
+            </div>
+            <div class="column auto">
+                <button class="button is-info" type="submit">Submit</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</form>
+</div>
+<div *ngIf="!displaySearch">
+    <form #searchForm="ngForm" (ngSubmit) = "onClickSubmit(searchForm.value)">
+        <div class="container">
+            <div class="columns">
+                <div class="column auto">
+                    <input class="input" type="date" placeholder="Enter start date" name="startDate" [(ngModel)]="startDate">
+                </div>
+                <div class="column auto">
+                    <input class="input" type="date" placeholder="Enter end date" name="endDate" [(ngModel)]="endDate">
+                </div>
+                <div class="column auto">
+                    <button class="button is-info" type="submit">Submit</button>
+                </div>
+            </div>
+            <div class="columns" *ngFor="let result of results">
+                <div class="column is-three-quarters">
+                    {{result.city}}
+                </div>
+                <div class="column auto">
+                    <button class="button is-small" [routerLink]="['/data',result.id]" >Show</button>
+                </div>
+                <div class="column auto">
+                    <button class="button is-info is-small" [routerLink]="['/data',result.id,'edit']">Edit</button>
+                </div>
+                <div class="column auto">
+                    <button class="button is-danger is-small" [routerLink]="['/data',result.id,'delete']">Delete</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

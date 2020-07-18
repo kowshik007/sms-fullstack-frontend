@@ -1,0 +1,64 @@
+<div class="container is-fluid">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li><a>SMS</a></li>
+          <li><a>DATA</a></li>
+          <li class="is-active"><a>{{id}}</a></li>
+        </ul>
+      </nav>
+    <div class="columns" *ngIf="error">
+        <div class="notification">
+            {{error.message}}
+        </div>
+    </div>
+    <div *ngIf="!error">
+        <div class="columns">
+            <div class="column auto">
+                <strong>City</strong>
+            </div>
+            <div class="column auto">
+                {{data.city}}
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column auto">
+                <Strong>StartDate</Strong>
+            </div>
+            <div class="column auto">
+                {{data.startDate}}
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column auto">
+                <strong>EndDate</strong>
+            </div>
+            <div class="column auto">
+                {{data.endDate}}
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column auto">
+                <strong>Price</strong>
+            </div>
+            <div class="column auto">
+                {{data.price}}
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column auto">
+                <strong>Status</strong>
+            </div>
+            <div class="column auto">
+                {{data.status}}
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column auto">
+                <strong>Color</strong>
+            </div>
+            <div class="column auto" [ngStyle]="{'background-color':data.color}">
+               
+            </div>
+        </div>
+    </div>
+</div>

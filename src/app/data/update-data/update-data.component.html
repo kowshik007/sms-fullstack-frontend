@@ -1,0 +1,78 @@
+<div class="container is-fluid">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li><a>SMS</a></li>
+          <li><a>DATA</a></li>
+          <li><a>{{id}}</a></li>
+          <li class="is-active"><a>edit</a></li>
+        </ul>
+      </nav>
+    <div class="columns" *ngIf="error">
+        <div class="notification">
+            {{error.message}}
+        </div>
+    </div>
+    <div *ngIf="!error">
+        <form #dataForm="ngForm" (ngSubmit) = "onClickSubmit(dataForm.value)">
+            <div class="field">
+                <label class="label">City</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter the city name" name="city" [(ngModel)]="data.city">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">StartDate</label>
+                <div class="control">
+                  <input class="input" type="date" placeholder="Start Date" name="startDate" [(ngModel)]="data.startDate">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">EndDate</label>
+                <div class="control">
+                  <input class="input" type="date" placeholder="End Date" name="endDate" [(ngModel)]="data.endDate">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Price</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter the price" name="price" [(ngModel)]="data.price">
+                </div>
+            </div>
+                           
+              <div class="field">
+                <label class="label">Status</label>
+                <div class="control">
+                  <div class="select">
+                    <select name="status" [(ngModel)]="data.status">
+                      <option>Once</option>
+                      <option>Daily</option>
+                      <option>Weekly</option>
+                      <option>Yearly</option>
+                      <option>Seldom</option>
+                      <option>Monthly</option>
+                      <option>Often</option>
+                      <option>Never</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Color</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Enter the color" name="color" [(ngModel)]="data.color">
+                </div>
+              </div>
+              
+              
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link" type="submit">Submit</button>
+                </div>
+              </div>
+        </form>
+    </div>
+</div>
