@@ -44,11 +44,7 @@ const routes: Routes = [
       {
         path: '',
         component: SearchFormComponent
-      },
-      {
-        path: 'results',
-        component: SearchResultsComponent
-      },
+      }
     ]
   }
 ];
