@@ -8,7 +8,6 @@ import { UpdateDataComponent } from './data/update-data/update-data.component';
 import { DeleteDataComponent } from './data/delete-data/delete-data.component';
 import { SearchComponent } from './search/search.component';
 import { SearchFormComponent } from './search/search-form/search-form.component';
-import { SearchResultsComponent } from './search/search-results/search-results.component';
 
 const routes: Routes = [
   {
