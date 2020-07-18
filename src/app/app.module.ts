@@ -17,7 +17,6 @@ import { ListDataComponent } from './data/list-data/list-data.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { SearchFormComponent } from './search/search-form/search-form.component';
-import { SearchResultsComponent } from './search/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -33,8 +32,7 @@ import { SearchResultsComponent } from './search/search-results/search-results.c
     IndexComponent,
     ListDataComponent,
     SearchComponent,
-    SearchFormComponent,
-    SearchResultsComponent
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
